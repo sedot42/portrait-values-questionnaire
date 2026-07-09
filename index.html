@@ -6,16 +6,16 @@
     <title>Werte-Test · Was ist Ihnen im Leben wichtig?</title>
     <style>
       :root {
-        --ink: #1b1d24;
+        --ink: #2D373C;
         --muted: #6c7280;
         --faint: #9aa0ac;
         --line: #e6e8ed;
         --paper: #f6f7f9;
         --card: #ffffff;
-        --blue: #2a44c9; /* Ihr Ergebnis */
-        --blue-soft: rgba(42, 68, 201, 0.1);
+        --mint: #6fb4b0; /* Ihr Ergebnis */
+        --mint-soft: #D2EBE9;
         --amber: #dd8a3c; /* CH-Stichprobe */
-        --amber-soft: rgba(221, 138, 60, 0.16);
+        --amber-soft: rgba(30, 30, 29, 0.16);
         --radius: 14px;
       }
       * {
@@ -43,7 +43,7 @@
         font-size: 12px;
         letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--blue);
+        color: var(--mint);
         font-weight: 600;
         margin: 0 0 14px;
       }
@@ -91,8 +91,8 @@
         place-items: center;
         font-size: 13px;
         font-weight: 600;
-        background: var(--blue-soft);
-        color: var(--blue);
+        background: var(--mint-soft);
+        color: var(--mint);
       }
       .pills {
         display: flex;
@@ -171,7 +171,7 @@
         display: block;
         height: 100%;
         width: 0;
-        background: var(--blue);
+        background: var(--mint);
         border-radius: 99px;
         transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -232,18 +232,18 @@
         transition: all 0.12s ease;
       }
       .opt[aria-pressed="true"] {
-        border-color: var(--blue);
-        background: var(--blue-soft);
+        border-color: var(--mint);
+        background: var(--mint-soft);
       }
       .opt[aria-pressed="true"] .dot {
-        background: var(--blue);
-        border-color: var(--blue);
+        background: var(--mint);
+        border-color: var(--mint);
         color: #fff;
       }
       .opt:focus-visible,
       .btn:focus-visible,
       .btn-ghost:focus-visible {
-        outline: 2.5px solid var(--blue);
+        outline: 2.5px solid var(--mint);
         outline-offset: 2px;
       }
 
@@ -273,7 +273,7 @@
       svg.radar .axis-label {
         font-size: 22px;
         font-weight: 600;
-        fill: #3a3d47;
+        fill: #2D373C;
       }
       svg.radar .tick {
         font-size: 18px;
@@ -316,7 +316,7 @@
         flex: 0 0 auto;
       }
       .swatch.you {
-        background: var(--blue);
+        background: var(--mint);
       }
       .swatch.ch {
         background: var(--amber);
@@ -358,7 +358,7 @@
         font-weight: 600;
       }
       td.score.you {
-        color: var(--blue);
+        color: var(--mint);
       }
       td.score.ch {
         color: var(--amber);
@@ -382,7 +382,7 @@
         opacity: 0.55;
       }
       .minibar .b-you {
-        background: var(--blue);
+        background: var(--mint);
       }
 
       .footnote {
@@ -795,6 +795,7 @@
               .map((n) => n.toFixed(1))
               .join(","),
           ).join(" ");
+        
           grid += `<polygon points="${p}" fill="none" stroke="#e6e8ed" stroke-width="1"/>`;
         }
         // Speichen + Skalenzahlen
@@ -832,14 +833,14 @@
         const youPoly = poly(you);
         const youDots = VALUE_ORDER.map((v, i) => {
           const [x, y] = pt(i, rad(you[v]));
-          return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.2" fill="#2a44c9"/>`;
+          return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.2" fill="#6fb4b0"/>`;
         }).join("");
 
         return `<svg class="radar" viewBox="0 0 760 600" role="img" aria-label="Radardiagramm Ihres Werteprofils im Vergleich zur Schweizer Stichprobe">
         ${grid}${spokes}${ticks}
         <g id="radar-data" style="opacity:0;transition:opacity .6s ease">
           <polygon points="${essPoly}" fill="rgba(221,138,60,.16)" stroke="#dd8a3c" stroke-width="1.6" stroke-linejoin="round"/>
-          <polygon points="${youPoly}" fill="rgba(42,68,201,.14)" stroke="#2a44c9" stroke-width="2.2" stroke-linejoin="round"/>
+          <polygon points="${youPoly}" fill="rgba(42,68,201,.14)" stroke="#6fb4b0" stroke-width="2.2" stroke-linejoin="round"/>
           ${youDots}
         </g>
         ${labels}
