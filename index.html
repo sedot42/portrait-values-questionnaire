@@ -23,9 +23,9 @@
         --amber: #dd8a3c; /* CH-Stichprobe */
         --amber-soft: rgba(30, 30, 29, 0.16);
         --radius: 14px;
-        --fs-small: 1rem;
-        --fs-medium: 1.25rem;
-        --fs-large: 1.75rem;
+        --fs-small: 0.89rem;
+        --fs-medium: 1rem;
+        --fs-large: 1.6875rem;
       }
       * {
         box-sizing: border-box;
@@ -36,8 +36,7 @@
         /* Schrift wird von der einbettenden Seite übernommen.
            Optional per ?font=... überschreibbar (siehe Script unten). */
         font-family: Inter, sans-serif;
-      }
-      body {
+        font-weight: 300;
         background: var(--paper);
         color: var(--ink);
         line-height: 1.55;
@@ -57,8 +56,9 @@
         margin: 0 0 14px;
       }
       h1 {
-        font-weight: 600;
+        font-weight: 400;
         font-size: var(--fs-large);
+        font-family: "PT Serif", serif;
         line-height: 1.18;
         margin: 0 0 16px;
         letter-spacing: -0.01em;
@@ -187,7 +187,8 @@
 
       /* ---- Frage ---- */
       .statement {
-        font-weight: 500;
+        font-weight: 400;
+        font-family: "PT Serif", serif;
         font-size: var(--fs-large);
         line-height: 1.4;
         margin: 0 0 8px;
