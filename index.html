@@ -12,14 +12,14 @@
     <title>Werte-Test · Was ist Ihnen im Leben wichtig?</title>
     <style>
       :root {
-        --ink: #2D373C;
+        --ink: #2d373c;
         --muted: #6c7280;
         --faint: #9aa0ac;
         --line: #e6e8ed;
         --paper: #f6f7f9;
         --card: #ffffff;
         --mint: #6fb4b0; /* Ihr Ergebnis */
-        --mint-soft: #D2EBE9;
+        --mint-soft: #d2ebe9;
         --amber: #dd8a3c; /* CH-Stichprobe */
         --amber-soft: rgba(30, 30, 29, 0.16);
         --radius: 14px;
@@ -279,7 +279,7 @@
       svg.radar .axis-label {
         font-size: 22px;
         font-weight: 600;
-        fill: #2D373C;
+        fill: #2d373c;
       }
       svg.radar .tick {
         font-size: 18px;
@@ -624,9 +624,7 @@
         const keyItems = SCALE.map(
           ([n, l]) => `<li><span class="num">${n}</span>${esc(l)}</li>`,
         ).join("");
-        const pills = VALUE_ORDER.map(
-          (v) => `<span class="pill">${esc(v)}</span>`,
-        ).join("");
+        const pills = VALUE_ORDER.map((v) => `<span class="pill">${esc(v)}</span>`).join("");
         app.replaceChildren(
           el(`
         <section class="fade">
@@ -677,9 +675,7 @@
         app.querySelectorAll(".opt").forEach((b) => {
           b.addEventListener("click", () => {
             answers[i] = Number(b.dataset.val);
-            app
-              .querySelectorAll(".opt")
-              .forEach((x) => x.setAttribute("aria-pressed", x === b));
+            app.querySelectorAll(".opt").forEach((x) => x.setAttribute("aria-pressed", x === b));
             // kurze Verzögerung, damit die Auswahl sichtbar wird, bevor weitergeblättert wird
             setTimeout(() => {
               idx = i + 1;
@@ -702,9 +698,9 @@
       function computeScores() {
         const out = {};
         VALUE_ORDER.forEach((v) => {
-          const vals = QUESTIONS.map((q, i) =>
-            q.value === v ? answers[i] : null,
-          ).filter((x) => x != null);
+          const vals = QUESTIONS.map((q, i) => (q.value === v ? answers[i] : null)).filter(
+            (x) => x != null,
+          );
           out[v] = vals.reduce((a, b) => a + b, 0) / vals.length;
         });
         return out;
@@ -775,10 +771,7 @@
         const R = 180;
         const ang = (i) => ((-90 + i * (360 / N)) * Math.PI) / 180;
         const rad = (v) => ((v - 1) / 5) * R; // Wert 1 -> Mitte, 6 -> Aussenkante
-        const pt = (i, r) => [
-          cx + Math.cos(ang(i)) * r,
-          cy + Math.sin(ang(i)) * r,
-        ];
+        const pt = (i, r) => [cx + Math.cos(ang(i)) * r, cy + Math.sin(ang(i)) * r];
         const poly = (vals) =>
           VALUE_ORDER.map((v, i) =>
             pt(i, rad(vals[v]))
@@ -794,7 +787,7 @@
               .map((n) => n.toFixed(1))
               .join(","),
           ).join(" ");
-        
+
           grid += `<polygon points="${p}" fill="none" stroke="#e6e8ed" stroke-width="1"/>`;
         }
         // Speichen + Skalenzahlen
@@ -824,7 +817,10 @@
             anchor = "end";
             dx = -2;
           }
-          const dy = Math.sin(a) > 0.6 ? 12 : Math.sin(a) < -0.6 ? -4 : 4;
+          const dy =
+            Math.sin(a) > 0.6 ? 12
+            : Math.sin(a) < -0.6 ? -4
+            : 4;
           labels += `<text class="axis-label" x="${(lx + dx).toFixed(1)}" y="${(ly + dy).toFixed(1)}" text-anchor="${anchor}">${esc(v)}</text>`;
         });
 
