@@ -448,17 +448,16 @@
       "use strict";
 
       /* ---------- Daten (1:1 aus Agora_PQ21_Wertetest.xlsx) ---------- */
-      // Reihenfolge der Aussagen wie im Tabellenblatt "Fragen" (Zeilen 5–25).
       const QUESTIONS = [
         {
           code: "SD1",
           value: "Selbstbestimmung",
-          text: "Es ist Ihnen wichtig, neue Ideen zu entwickeln und kreativ zu sein. Sie machen Sachen gerne auf ihre eigene originelle Art und Weise.",
+          text: "Es ist ihnen wichtig, neue Ideen zu entwickeln und kreativ zu sein. Sie machen Sachen gerne auf ihre eigene originelle Art und Weise.",
         },
         {
           code: "PO1",
           value: "Macht",
-          text: "Es ist Ihnen wichtig, reich zu sein. Sie möchten viel Geld haben und teure Sachen besitzen.",
+          text: "Es ist ihnen wichtig, reich zu sein. Sie möchten viel Geld haben und teure Sachen besitzen.",
         },
         {
           code: "UN1",
@@ -468,12 +467,12 @@
         {
           code: "AC1",
           value: "Leistung",
-          text: "Es ist Ihnen wichtig, ihre Fähigkeiten zu zeigen. Sie möchten, dass die Leute bewundern, was sie tun.",
+          text: "Es ist ihnen wichtig, ihre Fähigkeiten zu zeigen. Sie möchten, dass die Leute bewundern, was sie tun.",
         },
         {
           code: "SE1",
           value: "Sicherheit",
-          text: "Es ist Ihnen wichtig, in einem sicheren Umfeld zu leben. Sie vermeiden alles, was ihre Sicherheit gefährden könnte.",
+          text: "Es ist ihnen wichtig, in einem sicheren Umfeld zu leben. Sie vermeiden alles, was ihre Sicherheit gefährden könnte.",
         },
         {
           code: "ST1",
@@ -488,37 +487,37 @@
         {
           code: "UN2",
           value: "Universalismus",
-          text: "Es ist Ihnen wichtig, Menschen zuzuhören, die anders sind als sie. Auch wenn sie nicht ihrer Meinung sind, wollen sie sie trotzdem verstehen.",
+          text: "Es ist ihnen wichtig, Menschen zuzuhören, die anders sind als sie. Auch wenn sie nicht ihrer Meinung sind, wollen sie sie trotzdem verstehen.",
         },
         {
           code: "TR1",
           value: "Tradition",
-          text: "Es ist Ihnen wichtig, zurückhaltend und bescheiden zu sein. Sie versuchen, die Aufmerksamkeit nicht auf sich zu lenken.",
+          text: "Es ist ihnen wichtig, zurückhaltend und bescheiden zu sein. Sie versuchen, die Aufmerksamkeit nicht auf sich zu lenken.",
         },
         {
           code: "HE1",
           value: "Hedonismus",
-          text: "Es ist Ihnen wichtig, Spass zu haben. Sie gönnen sich selbst gerne etwas.",
+          text: "Es ist ihnen wichtig, Spass zu haben. Sie gönnen sich selbst gerne etwas.",
         },
         {
           code: "SD2",
           value: "Selbstbestimmung",
-          text: "Es ist Ihnen wichtig, selbst zu entscheiden, was sie tun. Sie sind gerne frei und unabhängig von anderen.",
+          text: "Es ist ihnen wichtig, selbst zu entscheiden, was sie tun. Sie sind gerne frei und unabhängig von anderen.",
         },
         {
           code: "BE1",
           value: "Wohlwollen",
-          text: "Es ist Ihnen sehr wichtig, den Menschen um sie herum zu helfen. Sie wollen für deren Wohl sorgen.",
+          text: "Es ist ihnen sehr wichtig, den Menschen um sie herum zu helfen. Sie wollen für deren Wohl sorgen.",
         },
         {
           code: "AC2",
           value: "Leistung",
-          text: "Es ist Ihnen wichtig, sehr erfolgreich zu sein. Sie hoffen, dass die Leute ihre Leistungen anerkennen.",
+          text: "Es ist ihnen wichtig, sehr erfolgreich zu sein. Sie hoffen, dass die Leute ihre Leistungen anerkennen.",
         },
         {
           code: "SE2",
           value: "Sicherheit",
-          text: "Es ist Ihnen wichtig, dass der Staat ihre persönliche Sicherheit vor allen Bedrohungen gewährleistet. Sie wollen einen starken Staat, der seine Bürger verteidigt.",
+          text: "Es ist ihnen wichtig, dass der Staat ihre persönliche Sicherheit vor allen Bedrohungen gewährleistet. Sie wollen einen starken Staat, der seine Bürger verteidigt.",
         },
         {
           code: "ST2",
@@ -528,32 +527,32 @@
         {
           code: "CO2",
           value: "Konformität",
-          text: "Es ist Ihnen wichtig, sich jederzeit korrekt zu verhalten. Sie vermeiden es, Dinge zu tun, die andere Leute für falsch halten könnten.",
+          text: "Es ist ihnen wichtig, sich jederzeit korrekt zu verhalten. Sie vermeiden es, Dinge zu tun, die andere Leute für falsch halten könnten.",
         },
         {
           code: "PO2",
           value: "Macht",
-          text: "Es ist Ihnen wichtig, dass andere sie respektieren. Sie wollen, dass die Leute tun, was sie sagen.",
+          text: "Es ist ihnen wichtig, dass andere sie respektieren. Sie wollen, dass die Leute tun, was sie sagen.",
         },
         {
           code: "BE2",
           value: "Wohlwollen",
-          text: "Es ist Ihnen wichtig, ihren Freunden gegenüber loyal zu sein. Sie wollen sich für Menschen einsetzen, die Ihnen nahestehen.",
+          text: "Es ist ihnen wichtig, ihren Freunden gegenüber loyal zu sein. Sie wollen sich für Menschen einsetzen, die ihnen nahestehen.",
         },
         {
           code: "UN3",
           value: "Universalismus",
-          text: "Sie sind fest davon überzeugt, dass die Menschen sich um die Natur kümmern sollten. Umweltschutz ist Ihnen wichtig.",
+          text: "Sie sind fest davon überzeugt, dass die Menschen sich um die Natur kümmern sollten. Umweltschutz ist ihnen wichtig.",
         },
         {
           code: "TR2",
           value: "Tradition",
-          text: "Tradition ist Ihnen wichtig. Sie versuchen, sich an die Sitten und Gebräuche zu halten, die Ihnen von ihrer Religion oder ihrer Familie überliefert wurden.",
+          text: "Tradition ist ihnen wichtig. Sie versuchen, sich an die Sitten und Gebräuche zu halten, die ihnen von ihrer Religion oder ihrer Familie überliefert wurden.",
         },
         {
           code: "HE2",
           value: "Hedonismus",
-          text: "Sie lassen keine Gelegenheit aus, Spass zu haben. Es ist Ihnen wichtig, Dinge zu tun, die Ihnen Vergnügen bereiten.",
+          text: "Sie lassen keine Gelegenheit aus, Spass zu haben. Es ist ihnen wichtig, Dinge zu tun, die ihnen Vergnügen bereiten.",
         },
       ];
 
@@ -633,7 +632,7 @@
         <section class="fade">
           <p class="eyebrow">Werte-Test</p>
           <h1>Was ist Ihnen im Leben wichtig?<br>Finden Sie es heraus.</h1>
-          <p class="lead">Nachfolgend finden Sie 21 Aussagen zu Personen. Lesen Sie jede und entscheiden Sie: Wie ähnlich sind Sie der beschriebenen Person?</p>
+          <p class="lead">Nachfolgend finden Sie 21 Aussagen zu Personen. Lesen Sie jede und entscheiden Sie: Wie ähnlich sind Sie den beschriebenen Personen?</p>
           <div class="card">
             <ul class="scale-key">${keyItems}</ul>
             <div class="pills">${pills}</div>
@@ -669,7 +668,7 @@
           <div class="bar"><i style="width:${pct}%"></i></div>
           <div class="card">
             <p class="statement">${esc(q.text)}</p>
-            <p class="prompt">Wie ähnlich sind Sie dieser Person?</p>
+            <p class="prompt">Wie ähnlich sind Sie diesen Personen?</p>
             <div class="options" id="opts">${opts}</div>
           </div>
         </section>
